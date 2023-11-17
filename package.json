@@ -1,0 +1,10 @@
+{
+  "name": "api-gpt-whatsapp",
+  "version": "0.2.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --wr
