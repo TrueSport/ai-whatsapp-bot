@@ -35,4 +35,5 @@ model Message {
 enum Role {
   user
   assistant
-  syst
+  system
+}
