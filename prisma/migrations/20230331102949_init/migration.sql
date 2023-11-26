@@ -26,4 +26,4 @@ CREATE TABLE "Message" (
 CREATE UNIQUE INDEX "customers_user_key" ON "customers"("user");
 
 -- AddForeignKey
-ALTER TABLE "Message" ADD CONSTRAINT "Message_ownerId_fkey" FOREIGN K
+ALTER TABLE "Message" ADD CONSTRAINT "Message_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "customers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
