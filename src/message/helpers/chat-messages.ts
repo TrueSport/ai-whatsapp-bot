@@ -47,4 +47,15 @@ function getHelperSuporterMessage(): string {
   return `Para suporte humanizado, entre em contato através dos seguintes números durante o horário comercial:
 
   📞 +55 64 9 8123-0208 - Falar com Gustavo
-  📞 +55 51 9 9780-5917
+  📞 +55 51 9 9780-5917 - Falar com Leonardo
+  
+  Por favor, observe que o suporte está disponível somente durante o horário comercial.`;
+}
+
+export {
+  getDonationMessage,
+  getHelpMessage,
+  getThankYouMessage,
+  getClearChatSuccessMessage,
+  getHelperSuporterMessage,
+};
