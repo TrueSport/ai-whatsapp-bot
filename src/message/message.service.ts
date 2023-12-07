@@ -22,4 +22,45 @@ export class MessageService {
 
   async createMessage(incomingMessageDto: IncomingMessageDto) {
     const user = incomingMessageDto.from;
-    c
+    const content = incomingMessageDto.body;
+    const customer = await this.customerService.findCustomer(user);
+
+    if (!customer) {
+      const createdCustomer = await this.customerService.createCustomer({
+        user,
+      });
+      if (createdCustomer) {
+        await this.customerService.saveMessage({
+          role: 'system',
+          content: process.env.BOT_PERSONA,
+          owner: {
+            connect: {
+              user,
+            },
+          },
+        });
+        await this.customerService.saveMessage({
+          role: 'user',
+          content,
+          owner: {
+            connect: {
+              user,
+            },
+          },
+        });
+      }
+
+      return getDonationMessage();
+    }
+
+    await this.customerService.saveMessage({
+      role: 'user',
+      content,
+      owner: {
+        connect: {
+          user,
+        },
+      },
+    });
+
+    const context = await this.customerService.getMessagesContex
