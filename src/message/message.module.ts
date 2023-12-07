@@ -10,4 +10,13 @@ import { RouterService } from './router/router.service';
   providers: [
     PrismaService,
     OpenAiService,
-    CustomerSer
+    CustomerService,
+    MessageService,
+    RouterService,
+  ],
+})
+export class MessageModule {
+  constructor(public routerService: RouterService) {
+    this.routerService.initialize();
+  }
+}
