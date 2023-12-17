@@ -110,4 +110,6 @@ export class MessageService {
   }
 
   async HelperSuporterMessage() {
-    r
+    return getHelperSuporterMessage();
+  }
+}
